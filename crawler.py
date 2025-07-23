@@ -1,11 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-import re
 
 visited = set()
 
-def crawl_site(base_url, max_depth=2):
+def crawl_site(base_url, max_depth=2, session=None):
+    if not session:
+        session = requests.Session()
     urls = set()
     forms = []
     def crawl(url, depth):
@@ -13,7 +14,7 @@ def crawl_site(base_url, max_depth=2):
             return
         visited.add(url)
         try:
-            res = requests.get(url, timeout=5)
+            res = session.get(url, timeout=5)
             soup = BeautifulSoup(res.text, "html.parser")
             for form in soup.find_all("form"):
                 forms.append((url, str(form)))
@@ -22,7 +23,7 @@ def crawl_site(base_url, max_depth=2):
                 if urlparse(full_url).netloc == urlparse(base_url).netloc:
                     urls.add(full_url)
                     crawl(full_url, depth + 1)
-        except requests.RequestException:
+        except:
             pass
     crawl(base_url, 0)
     return list(urls), forms

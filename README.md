@@ -1,49 +1,37 @@
-# Web VulnScan Pro
-# -Abdul Hamid Noorani
-A Python-based web vulnerability scanner that crawls a target website and detects common vulnerabilities like XSS and SQL Injection.
+# Web VulnScan Pro (Final Version)
+## 👤 Built With Pride By
 
-## Features
+**Hamid Noorani**  
+📧 hamidnoorani04@gmail.com 
+🔗 [GitHub](https://github.com/HamidNoorani04)
+🔗 [LinkedIn](https://linkedin.com/in/Abdul-Hamid-Noorani)
 
-- Crawl internal links up to depth 2
-- Parse and analyze forms and URL parameters
-- Detect:
-  - Cross-Site Scripting (XSS)
-  - SQL Injection (SQLi)
-- Output a detailed JSON report
-- Clean and modular Python code
 
-## Usage
+A professional Python tool for scanning web applications for common vulnerabilities.
 
-```bash
-python3 scanner.py https://example.com -o scan_report.json
-```
+## 🔐 Features
+- XSS, SQL Injection, LFI, Open Redirects
+- POST-based form injection
+- Login with session authentication
+- Clean JSON reports
 
-## Requirements
-
-- Python 3.x
-- requests
-- beautifulsoup4
-
-Install dependencies:
+## 🔧 Requirements
 
 ```bash
-pip install -r requirements.txt
+pip install requests beautifulsoup4
 ```
 
-## Sample Output
+## 🚀 Usage
 
-```json
-{
-    "vulnerabilities": [
-        {
-            "url": "https://example.com/search",
-            "type": "XSS",
-            "payload": "<script>alert(1)</script>"
-        }
-    ]
-}
+```bash
+python scanner.py https://target.com -o report.json
 ```
 
-## Disclaimer
+With login:
 
-For educational and authorized testing purposes only.
+```bash
+python scanner.py https://target.com --login-url https://target.com/login --username admin --password admin123 -o secure-report.json
+```
+
+## ⚠️ Legal Disclaimer
+Use only on systems you own or have permission to test.

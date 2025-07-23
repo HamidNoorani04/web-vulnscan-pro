@@ -1,5 +1,5 @@
 # Web VulnScan Pro
-
+# -Abdul Hamid Noorani
 A Python-based web vulnerability scanner that crawls a target website and detects common vulnerabilities like XSS and SQL Injection.
 
 ## Features

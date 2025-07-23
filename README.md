@@ -4,7 +4,7 @@
 **Hamid Noorani**  
 📧 hamidnoorani04@gmail.com 
 🔗 [GitHub](https://github.com/HamidNoorani04)
-🔗 [LinkedIn](https://linkedin.com/in/Abdul-Hamid-Noorani)
+🔗 [LinkedIn](www.linkedin.com/in/abdul-hamid-noorani-37258a351)
 
 
 A professional Python tool for scanning web applications for common vulnerabilities.
